@@ -20,4 +20,4 @@ popd
 
 df -k
 
-$output_dir/supply "$BUILD_DIR" "$CAHCE_DIR" "$DEPS_DIR" "$DEPS_IDX"
+$output_dir/supply "$BUILD_DIR" "$CACHE_DIR" "$DEPS_DIR" "$DEPS_IDX"
