@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+set -x 
+
 BUILD_DIR=$1
 CACHE_DIR=$2
 DEPS_DIR=$3
@@ -14,5 +16,7 @@ echo "-----> Running go build supply"
 pushd $BUILDPACK_DIR
 GOROOT=$GoInstallDir $GoInstallDir/bin/go build -mod=vendor -o $output_dir/supply ./src/apt/supply/cli
 popd
+
+df -k
 
 $output_dir/supply "$BUILD_DIR" "$CACHE_DIR" "$DEPS_DIR" "$DEPS_IDX"
